@@ -1,24 +1,1359 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Acadika Classes</title>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acadika Classes – Maths & Science Tutoring | Classes 4–10</title>
+<meta name="description" content="Expert Maths and Science tutoring for Classes 4–10. CBSE, ICSE, KS3, and GCSE curricula. Small batches, big results. Based in Aligarh. Now accepting UK students online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary: #1a3a6b;
+    --accent: #f97316;
+    --accent-light: #fff4ed;
+    --bg: #ffffff;
+    --surface: #f8f9fb;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --green: #166534;
+    --green-bg: #dcfce7;
+    --radius: 12px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Sora', sans-serif;
+    line-height: 1.2;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .logo {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo span {
+    color: var(--accent);
+  }
+
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: var(--primary);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .logo-icon svg { width: 18px; height: 18px; fill: white; }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--primary); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .nav-cta:hover { background: #ea6c07 !important; transform: translateY(-1px); }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0f2557 0%, #1a3a6b 60%, #1e4d8c 100%);
+    color: white;
+    padding: 90px 5% 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 540px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(249,115,22,0.08);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .hero-content { flex: 1; max-width: 580px; position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(249,115,22,0.15);
+    border: 1px solid rgba(249,115,22,0.35);
+    color: #fdba74;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .hero-badge::before {
+    content: '●';
+    font-size: 8px;
+    color: #f97316;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: #f97316;
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    max-width: 480px;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary:hover { background: #ea6c07; transform: translateY(-2px); }
+
+  .btn-outline {
+    color: rgba(255,255,255,0.85);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 28px;
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    flex-wrap: wrap;
+  }
+
+  .stat-item { text-align: left; }
+
+  .stat-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+  }
+
+  .hero-visual {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 24px;
+    width: 280px;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+
+  .curriculum-tag {
+    display: inline-block;
+    background: rgba(249,115,22,0.2);
+    color: #fdba74;
+    border: 1px solid rgba(249,115,22,0.3);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin: 4px 4px 4px 0;
+    letter-spacing: 0.04em;
+  }
+
+  .subjects-list {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .subject-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .subject-icon {
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .subject-row span {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .subject-row small {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    display: block;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 5%;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .trust-item svg { width: 18px; height: 18px; color: var(--accent); }
+
+  .check-icon { color: #16a34a; font-size: 16px; }
+
+  /* SECTIONS */
+  .section {
+    padding: 80px 5%;
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 700;
+    color: var(--primary);
+    max-width: 600px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 50px;
+  }
+
+  /* FEATURES */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+  }
+
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .feature-card:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 4px 20px rgba(26,58,107,0.08);
+  }
+
+  .feature-icon {
+    width: 48px; height: 48px;
+    background: var(--accent-light);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .feature-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .feature-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* COURSES */
+  .courses-section { background: var(--surface); }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+
+  .course-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .course-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+  }
+
+  .course-header {
+    padding: 20px 20px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .course-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .tag-cbse { background: #dbeafe; color: #1e40af; }
+  .tag-icse { background: #ede9fe; color: #5b21b6; }
+  .tag-ks3 { background: #dcfce7; color: #166534; }
+  .tag-gcse { background: #fef3c7; color: #92400e; }
+
+  .course-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+
+  .course-card .course-class {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .course-body {
+    padding: 16px 20px;
+  }
+
+  .course-subjects {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .subj-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    color: var(--text);
+  }
+
+  .batch-info {
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+
+  .pricing-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.1); }
+
+  .pricing-card.featured {
+    border: 2px solid var(--primary);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .pricing-card .plan-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+
+  .price-inr {
+    font-family: 'Sora', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .price-currency {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .price-period {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .price-gbp {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .plan-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 26px;
+  }
+
+  .plan-features li {
+    font-size: 14px;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  .plan-features li::before {
+    content: '✓';
+    color: #16a34a;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .btn-enroll {
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    transition: all 0.2s;
+    text-align: center;
+    display: block;
+  }
+
+  .btn-enroll:hover { background: var(--primary); color: white; }
+
+  .btn-enroll.primary-btn {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn-enroll.primary-btn:hover { background: #142d56; }
+
+  /* TESTIMONIALS */
+  .testimonials-section { background: var(--surface); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  @media (max-width: 900px) {
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 580px) {
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+
+  .testimonial-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stars {
+    color: #f59e0b;
+    font-size: 16px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+  }
+
+  .testimonial-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 18px;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .author-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  .author-detail {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* HOW IT WORKS */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    position: relative;
+  }
+
+  .step-item {
+    padding: 32px 28px;
+    position: relative;
+    text-align: center;
+  }
+
+  .step-num {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+
+  .step-item p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, #0f2557, #1a3a6b);
+    color: white;
+    padding: 80px 5%;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .cta-section p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    max-width: 500px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    background: white;
+    color: var(--primary);
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+
+  .btn-white:hover { background: #f0f4ff; transform: translateY(-2px); }
+
+  .btn-ghost {
+    color: rgba(255,255,255,0.85);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+
+  .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+  .contact-chips {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    padding: 8px 18px;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+
+  .contact-chip:hover { background: rgba(255,255,255,0.2); color: white; }
+
+  /* FOOTER */
+  footer {
+    background: #0a1f45;
+    color: rgba(255,255,255,0.6);
+    padding: 48px 5% 32px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand .logo { color: white; margin-bottom: 14px; }
+  .footer-brand p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+    max-width: 260px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: white; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom p { font-size: 13px; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 64px; left: 0; right: 0;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 5%;
+      gap: 18px;
+    }
+    .nav-links.open a { color: var(--text); font-size: 15px; }
+    .hamburger { display: flex; }
+    .hero { flex-direction: column; padding: 60px 5% 50px; min-height: auto; }
+    .hero-visual { display: none; }
+    .hero h1 { font-size: 30px; }
+    .hero-stats { gap: 18px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+    .trust-bar { gap: 16px; justify-content: flex-start; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* WHATSAPP FLOAT */
+  .wa-float {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 56px; height: 56px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 999;
+    transition: transform 0.2s;
+  }
+
+  .wa-float:hover { transform: scale(1.1); }
+  .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+  /* SMOOTH SCROLL ANCHOR OFFSET */
+  section[id] { scroll-margin-top: 70px; }
+</style>
 </head>
 <body>
-    <h1>Acadika Classes</h1>
 
-    <h2>Welcome</h2>
-    <p>Quality tuition classes for school students.</p>
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    Acadika <span>Classes</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#features">Why Us</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Free Class →</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
-    <h2>Subjects Offered</h2>
-    <ul>
-        <li>Mathematics</li>
-        <li>Science</li>
-        <li>English</li>
-    </ul>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">Now accepting UK students online</div>
+    <h1>Expert Maths &amp; Science Tutoring for <em>Classes 4–10</em></h1>
+    <p>Small-batch online classes with personalised attention. CBSE, ICSE, KS3 and GCSE — all under one roof.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book Free Trial Class →</a>
+      <a href="#courses" class="btn-outline">View Courses</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Students taught</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Years experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4–5</div>
+        <div class="stat-label">Students per batch</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Curricula covered</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-card-title">Curricula we cover</div>
+      <div>
+        <span class="curriculum-tag">CBSE</span>
+        <span class="curriculum-tag">ICSE</span>
+        <span class="curriculum-tag">KS3</span>
+        <span class="curriculum-tag">GCSE</span>
+      </div>
+      <div class="subjects-list">
+        <div class="subject-row">
+          <div class="subject-icon" style="background:#dbeafe;">➗</div>
+          <div>
+            <span>Mathematics</span>
+            <small>All classes, all boards</small>
+          </div>
+        </div>
+        <div class="subject-row">
+          <div class="subject-icon" style="background:#dcfce7;">🔬</div>
+          <div>
+            <span>Science</span>
+            <small>Physics · Chemistry · Biology</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2>Contact</h2>
-    <p>Phone: Your Number</p>
-    <p>Email: Your Email</p>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="check-icon">✓</span> No registration fee</div>
+  <div class="trust-item"><span class="check-icon">✓</span> First class free</div>
+  <div class="trust-item"><span class="check-icon">✓</span> Small batches – max 5 students</div>
+  <div class="trust-item"><span class="check-icon">✓</span> Live online via Google Meet / Zoom</div>
+  <div class="trust-item"><span class="check-icon">✓</span> Study materials included</div>
+</div>
+
+<!-- WHY US -->
+<section class="section" id="features">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-label">Why Acadika Classes</div>
+    <h2 class="section-title">A different kind of tutoring</h2>
+    <p class="section-sub">Not coaching. Not a big institute. A small, focused learning space where every student gets seen.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">👁</div>
+        <h3>Personal attention every class</h3>
+        <p>With only 4–5 students per batch, every child's doubt gets addressed in every session — no student is left behind.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <h3>Structured curriculum notes</h3>
+        <p>Chapter-wise notes, worksheets, and practice papers — all branded and print-ready. Students always know what to study.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>Multi-curriculum expertise</h3>
+        <p>Whether your child follows CBSE, ICSE, KS3 or GCSE — we have dedicated study plans aligned to each board's syllabus.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Long-term student retention</h3>
+        <p>Students who join in Class 4 often stay through Class 10. That consistent relationship is at the heart of our results.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🕐</div>
+        <h3>Flexible batch timings</h3>
+        <p>Morning, evening, and weekend slots available. UK-friendly timings (IST/BST) for Indian diaspora students.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Progress tracking for parents</h3>
+        <p>Regular updates on attendance, test performance, and topic-wise progress — so parents are always in the loop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="section courses-section" id="courses">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-label">Our Programmes</div>
+    <h2 class="section-title">Courses we offer</h2>
+    <p class="section-sub">Live online classes across four curricula, Classes 4 through 10.</p>
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="course-header">
+          <span class="course-tag tag-cbse">CBSE</span>
+          <h3>CBSE Maths &amp; Science</h3>
+          <div class="course-class">Classes 4 to 10</div>
+        </div>
+        <div class="course-body">
+          <div class="course-subjects">
+            <span class="subj-pill">Mathematics</span>
+            <span class="subj-pill">Science</span>
+          </div>
+          <div class="batch-info">📅 Mon · Wed · Fri or Tue · Thu · Sat</div>
+          <div class="batch-info">👥 Max 5 per batch</div>
+          <div class="batch-info">⏱ 60 min per session</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-header">
+          <span class="course-tag tag-icse">ICSE</span>
+          <h3>ICSE Maths &amp; Science</h3>
+          <div class="course-class">Classes 4 to 10</div>
+        </div>
+        <div class="course-body">
+          <div class="course-subjects">
+            <span class="subj-pill">Mathematics</span>
+            <span class="subj-pill">Physics</span>
+            <span class="subj-pill">Chemistry</span>
+          </div>
+          <div class="batch-info">📅 Mon · Wed · Fri or Tue · Thu · Sat</div>
+          <div class="batch-info">👥 Max 5 per batch</div>
+          <div class="batch-info">⏱ 60 min per session</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-header">
+          <span class="course-tag tag-ks3">KS3</span>
+          <h3>KS3 Maths &amp; Science</h3>
+          <div class="course-class">Year 7, 8 &amp; 9 (UK)</div>
+        </div>
+        <div class="course-body">
+          <div class="course-subjects">
+            <span class="subj-pill">Maths</span>
+            <span class="subj-pill">Physics</span>
+            <span class="subj-pill">Biology</span>
+          </div>
+          <div class="batch-info">📅 UK-friendly timings (BST)</div>
+          <div class="batch-info">👥 Max 5 per batch</div>
+          <div class="batch-info">⏱ 60 min per session</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-header">
+          <span class="course-tag tag-gcse">GCSE</span>
+          <h3>GCSE Maths &amp; Science</h3>
+          <div class="course-class">Year 10 &amp; 11 (UK)</div>
+        </div>
+        <div class="course-body">
+          <div class="course-subjects">
+            <span class="subj-pill">Maths</span>
+            <span class="subj-pill">Physics</span>
+            <span class="subj-pill">Chemistry</span>
+            <span class="subj-pill">Biology</span>
+          </div>
+          <div class="batch-info">📅 UK-friendly timings (BST)</div>
+          <div class="batch-info">👥 Max 5 per batch</div>
+          <div class="batch-info">⏱ 60 min per session</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="process">
+  <div style="max-width:1100px; margin:0 auto; text-align:center;">
+    <div class="section-label">Getting started</div>
+    <h2 class="section-title" style="margin:0 auto 14px;">How it works</h2>
+    <p class="section-sub" style="margin:0 auto 50px;">Simple 4-step process to start learning.</p>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <h3>Book free class</h3>
+        <p>Fill the form or message on WhatsApp. We'll schedule your free trial within 24 hours.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <h3>Attend free trial</h3>
+        <p>One free live session so your child can experience the teaching style and batch size.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <h3>Choose your plan</h3>
+        <p>Pick the batch schedule and subscription plan that fits your routine and budget.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <h3>Start learning</h3>
+        <p>Join your batch. Get notes, worksheets, and regular progress updates every month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section" id="testimonials">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-label">Student Reviews</div>
+    <h2 class="section-title">What parents say</h2>
+    <p class="section-sub">Real feedback from families who've been with Acadika Classes.</p>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"My daughter used to hate Maths and always avoided doing it — and today she says Maths is her favourite subject. A big thanks to Vipin sir, he has been excellent in teaching the new curriculum since my daughter goes to school in the United Kingdom. It was a tough phase for her but Vipin sir helped her sail smoothly. Thank you once again."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#1a3a6b;">S</div>
+          <div>
+            <div class="author-name">Sakshi</div>
+            <div class="author-detail">Parent · KS3, United Kingdom</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Mr. Vipin has been teaching my son since last year. I found him to be an excellent teacher — he educates students with creativity and patience. He is always on time, courteous, and passionate. Thank you for teaching my son."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#f97316;">BS</div>
+          <div>
+            <div class="author-name">B. C. Saravanan</div>
+            <div class="author-detail">Parent · Maths</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Vipin sir is very good at teaching. He teaches students with all the innovation and patience. He is very punctual, polite, and enthusiastic. I recommend his teaching to all students from Class 3/4 to Class 10."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#0f6e56;">KR</div>
+          <div>
+            <div class="author-name">Dr. K. K. Rajak</div>
+            <div class="author-detail">Parent · Classes 4–10</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Mr Vipin has been teaching my daughters for the last 4 years and I am very happy to see their improvement. He also taught my son from Class 6 to 10 — basic concepts became crystal clear. My son is now doing MBBS at Lokmanya Tilak Sion Medical College. I found Mr. Vipin to be a hardworking, emotional, and real GURU. I wish him great success."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#5b21b6;">ZD</div>
+          <div>
+            <div class="author-name">Dr. Zunjar Dubal</div>
+            <div class="author-detail">Parent · CBSE Classes 6–10</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Excellent teacher and mentor. He is making a lasting impact on the kids. The techniques and methodology he adopts for teaching are outstanding. Agrim is truly enjoying the way he is being mentored."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#92400e;">DA</div>
+          <div>
+            <div class="author-name">Dr. Abhishek</div>
+            <div class="author-detail">Parent · Science &amp; Maths</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"We've been incredibly fortunate to have found such a dedicated and caring Maths teacher for our daughter. Over the past year, he has transformed her attitude from anxiety and hesitation to genuine interest and enjoyment. His patience is remarkable — he always ensures she truly understands before moving on. She looks forward to every session. Highly recommended!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#166534;">SS</div>
+          <div>
+            <div class="author-name">Sudipta Singh</div>
+            <div class="author-detail">Parent · Maths, Online</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"You not only inspire my child to study sincerely, but also guide him to grow into a noble human being who leads a life filled with good deeds. You are a blessing not only for our kid but also for us as parents. Thank you for always going above and beyond to support and guide us."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#1a3a6b;">KP</div>
+          <div>
+            <div class="author-name">Kartik &amp; Priyanka Sachdeva</div>
+            <div class="author-detail">Parents · Science &amp; Maths</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <h2>Start with a free class today</h2>
+  <p>No commitment. No registration fee. Just one class to see if we're the right fit for your child.</p>
+  <div class="cta-actions">
+    <a href="https://wa.me/917500000000?text=Hi%20Acadika%20Classes%2C%20I%20want%20to%20book%20a%20free%20trial%20class" class="btn-white" target="_blank">📱 WhatsApp Us</a>
+    <a href="mailto:info@acadikaclasses.com" class="btn-ghost">✉️ Send Email</a>
+  </div>
+  <div class="contact-chips">
+    <span class="contact-chip">📍 Aligarh, Uttar Pradesh</span>
+    <span class="contact-chip">🕐 Mon–Sat · 6 AM – 9 PM IST</span>
+    <span class="contact-chip">🌐 Online via Google Meet</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid" style="max-width:1100px; margin:0 auto 40px;">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:12px;">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        Acadika Classes
+      </div>
+      <p>Expert Maths &amp; Science tutoring for Classes 4–10. Small batches, personalised attention, real results.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <ul class="footer-links">
+        <li><a href="#courses">CBSE Classes 4–10</a></li>
+        <li><a href="#courses">ICSE Classes 4–10</a></li>
+        <li><a href="#courses">KS3 Year 7–9</a></li>
+        <li><a href="#courses">GCSE Year 10–11</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#features">Why Acadika</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/917500000000">WhatsApp</a></li>
+        <li><a href="mailto:info@acadikaclasses.com">Email</a></li>
+        <li><a href="#">Aligarh, UP, India</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom" style="max-width:1100px; margin:0 auto;">
+    <p>© 2025 Acadika Classes. All rights reserved.</p>
+    <p>Made with ❤️ in Aligarh</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/917500000000?text=Hi%2C%20I%20want%20to%20book%20a%20free%20trial%20class%20at%20Acadika%20Classes" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
 </body>
 </html>
