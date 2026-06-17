@@ -1,653 +1,1317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Acadika Classes – Learn. Grow. Excel.</title>
-  <meta name="description" content="Acadika Classes offers expert tutoring for school and college students. Join us to build strong foundations and score better."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream: #ffffff;
-      --white: #ffffff;
-      --ink: #1a3a6b;
-      --ink-light: #6b7280;
-      --accent: #f97316;
-      --accent-light: #fff4ed;
-      --sage: #166534;
-      --sage-light: #dcfce7;
-      --border: #e5e7eb;
-      --shadow: 0 4px 24px rgba(26,58,107,0.08);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acadika Classes — Maths & Science Tutoring | Vipin Kumar</title>
+<meta name="description" content="One-on-one and small-batch Maths & Science tuition for Class 4–10 (CBSE/ICSE) and KS3/GCSE (UK), taught personally by Vipin Kumar since 2017. Trusted by parents in India, UK, USA and the Netherlands.">
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    html { scroll-behavior: smooth; }
+<style>
+  :root{
+    --navy: #1B2A4A;
+    --navy-deep: #121d36;
+    --orange: #F4732A;
+    --orange-deep: #D85A18;
+    --cream: #FDFBF6;
+    --paper: #FFFFFF;
+    --ink: #2D3142;
+    --ink-soft: #5B5F73;
+    --amber: #FFB347;
+    --rule: #E8E2D5;
+    --rule-soft: #EFEAE0;
+    --max: 1120px;
+  }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      overflow-x: hidden;
-    }
+  *{margin:0;padding:0;box-sizing:border-box;}
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(253,248,242,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 5%;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 68px;
-    }
-    .nav-logo {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.4rem; font-weight: 700;
-      color: var(--ink); text-decoration: none;
-    }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.9rem; font-weight: 500;
-      color: var(--ink-light); text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-cta {
-      background: var(--accent); color: white !important;
-      padding: 0.5rem 1.2rem; border-radius: 50px;
-      font-weight: 600 !important;
-    }
-    .nav-cta:hover { background: #c94f1a; color: white !important; }
+  html{scroll-behavior:smooth;}
 
-    /* hamburger */
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s; }
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
 
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 100px 5% 60px;
-      background: var(--cream);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; top: -100px; right: -100px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, #fde8d8 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .hero-content { max-width: 580px; animation: fadeUp 0.8s ease both; }
-    .hero-badge {
-      display: inline-block;
-      background: var(--accent-light); color: var(--accent);
-      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
-      text-transform: uppercase; padding: 0.4rem 1rem;
-      border-radius: 50px; margin-bottom: 1.5rem;
-    }
-    .hero h1 {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 900; line-height: 1.15;
-      color: var(--ink); margin-bottom: 1.2rem;
-    }
-    .hero h1 em { font-style: normal; color: var(--accent); }
-    .hero p {
-      font-size: 1.1rem; color: var(--ink-light);
-      line-height: 1.7; margin-bottom: 2rem; font-weight: 300;
-    }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--accent); color: white;
-      padding: 0.85rem 2rem; border-radius: 50px;
-      font-size: 1rem; font-weight: 600; text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 16px rgba(232,98,42,0.3);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,98,42,0.4); }
-    .btn-secondary {
-      color: var(--ink); background: white;
-      padding: 0.85rem 2rem; border-radius: 50px;
-      font-size: 1rem; font-weight: 600; text-decoration: none;
-      border: 1.5px solid var(--border);
-      transition: border-color 0.2s;
-    }
-    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--navy);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
 
-    .hero-stats {
-      display: flex; gap: 2.5rem; margin-top: 3rem; flex-wrap: wrap;
-    }
-    .stat-item { }
-    .stat-num {
-      font-family: 'Sora', sans-serif;
-      font-size: 2rem; font-weight: 700; color: var(--ink);
-    }
-    .stat-label { font-size: 0.82rem; color: var(--ink-light); font-weight: 400; }
+  .mono{
+    font-family:'JetBrains Mono', monospace;
+  }
 
-    .hero-image {
-      position: absolute; right: 5%; top: 50%;
-      transform: translateY(-50%);
-      width: min(420px, 42vw);
-      animation: fadeIn 1s ease 0.3s both;
-    }
-    .hero-image img { width: 100%; border-radius: 24px; }
-    .hero-image-placeholder {
-      width: 100%; aspect-ratio: 4/5;
-      background: linear-gradient(135deg, #f5e6d8, #fde8d8);
-      border-radius: 24px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 2rem;
-      border: 2px dashed var(--border);
-      color: var(--ink-light);
-    }
-    .hero-image-placeholder .placeholder-icon { font-size: 3rem; margin-bottom: 0.8rem; }
-    .hero-image-placeholder p { font-size: 0.85rem; line-height: 1.5; }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
 
-    /* ── SUBJECTS ── */
-    .section { padding: 80px 5%; }
-    .section-label {
-      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 0.6rem;
-    }
-    .section-title {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 700; color: var(--ink);
-      margin-bottom: 0.8rem;
-    }
-    .section-subtitle {
-      color: var(--ink-light); font-size: 1rem;
-      line-height: 1.6; max-width: 540px; font-weight: 300;
-    }
-    .section-header { margin-bottom: 3rem; }
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 24px;
+  }
 
-    .subjects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.2rem;
-    }
-    .subject-card {
-      background: white; border-radius: 16px;
-      padding: 1.8rem; border: 1px solid var(--border);
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: default;
-    }
-    .subject-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .subject-icon { font-size: 2rem; margin-bottom: 1rem; }
-    .subject-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .subject-card p { font-size: 0.88rem; color: var(--ink-light); line-height: 1.5; }
-    .subject-tag {
-      display: inline-block; margin-top: 1rem;
-      background: var(--sage-light); color: var(--sage);
-      font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.7rem;
-      border-radius: 50px;
-    }
+  /* Visible focus for accessibility */
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--orange);
+    outline-offset:3px;
+    border-radius:4px;
+  }
 
-    /* ── ABOUT ── */
-    .about { background: white; }
-    .about-inner {
-      display: flex; gap: 5rem; align-items: center; flex-wrap: wrap;
-    }
-    .about-image {
-      flex: 0 0 300px;
-      background: linear-gradient(135deg, #f5e6d8, #fde8d8);
-      border-radius: 24px; aspect-ratio: 3/4;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 2rem;
-      color: var(--ink-light); border: 2px dashed var(--border);
-    }
-    .about-image .placeholder-icon { font-size: 3rem; margin-bottom: 0.8rem; }
-    .about-image p { font-size: 0.85rem; }
-    .about-content { flex: 1; min-width: 280px; }
-    .about-content .section-title { margin-bottom: 1.2rem; }
-    .about-content p {
-      color: var(--ink-light); line-height: 1.8; font-size: 0.97rem;
-      margin-bottom: 1rem; font-weight: 300;
-    }
-    .about-highlights { display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
-    .highlight {
-      background: var(--accent-light); border-radius: 12px;
-      padding: 1rem 1.2rem; flex: 1; min-width: 130px;
-    }
-    .highlight-num {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.6rem; font-weight: 700; color: var(--accent);
-    }
-    .highlight-text { font-size: 0.78rem; color: var(--ink-light); font-weight: 400; margin-top: 0.2rem; }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
 
-    /* ── HOW IT WORKS ── */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-    .step { text-align: center; padding: 2rem 1rem; }
-    .step-num {
-      width: 52px; height: 52px;
-      background: var(--accent); color: white;
-      border-radius: 50%;
-      font-family: 'Sora', sans-serif;
-      font-size: 1.3rem; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.2rem;
-    }
-    .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .step p { font-size: 0.88rem; color: var(--ink-light); line-height: 1.6; }
+  /* ===== NAV ===== */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(253,251,246,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.25rem;
+    color:var(--navy);
+  }
+  .brand-mark{
+    width:34px;
+    height:34px;
+    border-radius:8px;
+    background:var(--navy);
+    color:var(--orange);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700;
+    font-size:0.95rem;
+    flex-shrink:0;
+  }
+  .nav-links{
+    display:flex;
+    gap:28px;
+    font-size:0.95rem;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+  .nav-links a:hover{color:var(--orange-deep);}
+  .nav-cta{
+    display:none;
+  }
+  @media (min-width:760px){
+    .nav-cta{display:inline-flex;}
+  }
 
-    /* ── TESTIMONIALS ── */
-    .testimonials { background: var(--ink); }
-    .testimonials .section-label { color: #e8a87c; }
-    .testimonials .section-title { color: white; }
-    .testimonials .section-subtitle { color: rgba(255,255,255,0.6); }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.2rem; margin-top: 3rem;
-      align-items: stretch;
-    }
-    @media (max-width: 900px) {
-      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 580px) {
-      .testimonials-grid { grid-template-columns: 1fr; }
-    }
-    .testimonial-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px; padding: 1.8rem;
-      display: flex; flex-direction: column;
-    }
-    .stars { color: #f5c842; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; flex-shrink: 0; }
-    .testimonial-card p {
-      color: rgba(255,255,255,0.8); font-size: 0.88rem;
-      line-height: 1.7; margin-bottom: 1.4rem; font-weight: 300;
-      flex: 1;
-    }
-    .testimonial-author { display: flex; align-items: center; gap: 0.8rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.08); flex-shrink: 0; }
-    .author-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #f5a07a);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; color: white; font-size: 0.9rem;
-    }
-    .author-name { font-size: 0.88rem; font-weight: 600; color: white; }
-    .author-detail { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--orange);
+    color:#fff;
+    font-weight:700;
+    font-size:0.95rem;
+    padding:12px 22px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 4px 14px rgba(244,115,42,0.32);
+    transition:transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{
+    background:var(--orange-deep);
+    transform:translateY(-1px);
+    box-shadow:0 6px 18px rgba(244,115,42,0.4);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--navy);
+    border:1.5px solid var(--navy);
+    box-shadow:none;
+  }
+  .btn-ghost:hover{
+    background:var(--navy);
+    color:#fff;
+    transform:translateY(-1px);
+    box-shadow:0 6px 16px rgba(27,42,74,0.25);
+  }
+  .btn-sm{padding:9px 16px; font-size:0.88rem;}
 
-    /* ── CONTACT ── */
-    .contact-inner {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; align-items: start;
-    }
-    .contact-info .section-title { margin-bottom: 1.2rem; }
-    .contact-info p {
-      color: var(--ink-light); line-height: 1.7;
-      margin-bottom: 2rem; font-weight: 300;
-    }
-    .contact-detail {
-      display: flex; align-items: center; gap: 0.8rem;
-      margin-bottom: 1rem; font-size: 0.93rem; color: var(--ink-light);
-    }
-    .contact-detail .icon { font-size: 1.2rem; }
-    .contact-detail a { color: var(--accent); text-decoration: none; }
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:64px 0 80px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-120px;
+    right:-160px;
+    width:480px;
+    height:480px;
+    background:radial-gradient(circle, rgba(244,115,42,0.13), transparent 70%);
+    z-index:0;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:48px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  @media (min-width:880px){
+    .hero-grid{grid-template-columns:1.05fr 0.95fr; gap:40px;}
+  }
 
-    .contact-form { background: white; border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow); }
-    .form-group { margin-bottom: 1.2rem; }
-    .form-group label {
-      display: block; font-size: 0.83rem; font-weight: 600;
-      margin-bottom: 0.4rem; color: var(--ink);
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%; padding: 0.75rem 1rem;
-      border: 1.5px solid var(--border); border-radius: 10px;
-      font-family: 'Inter', sans-serif; font-size: 0.93rem;
-      color: var(--ink); background: var(--cream);
-      outline: none; transition: border-color 0.2s;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--accent); }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-submit {
-      width: 100%; padding: 0.9rem;
-      background: var(--accent); color: white;
-      border: none; border-radius: 50px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1rem; font-weight: 600;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .form-submit:hover { background: #c94f1a; }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--orange-deep);
+    background:rgba(244,115,42,0.1);
+    padding:7px 14px;
+    border-radius:20px;
+    margin-bottom:22px;
+  }
+  .eyebrow .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--orange);
+    box-shadow:0 0 0 3px rgba(244,115,42,0.25);
+  }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink); color: rgba(255,255,255,0.5);
-      text-align: center; padding: 2rem 5%;
-      font-size: 0.85rem;
-    }
-    footer a { color: var(--accent); text-decoration: none; }
-    footer .footer-logo {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.3rem; color: white; margin-bottom: 0.5rem;
-    }
-    footer .footer-logo span { color: var(--accent); }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.6vw, 3.4rem);
+    margin-bottom:20px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--orange);
+  }
+  .hero-sub{
+    font-size:1.1rem;
+    color:var(--ink-soft);
+    max-width:520px;
+    margin-bottom:30px;
+  }
+  .hero-ctas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:34px;
+  }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
-    }
+  .hero-stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    border-top:1px solid var(--rule);
+    padding-top:24px;
+  }
+  .stat .num{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700;
+    font-size:1.5rem;
+    color:var(--navy);
+  }
+  .stat .num span{color:var(--orange);}
+  .stat .label{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
 
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--cream); padding: 1.5rem 5%; border-bottom: 1px solid var(--border); gap: 1rem; }
-      .nav-links.open { display: flex; }
-      .hamburger { display: flex; }
-      .hero { flex-direction: column; text-align: center; padding-top: 90px; }
-      .hero-image { position: relative; top: auto; right: auto; transform: none; width: 100%; max-width: 320px; margin: 2rem auto 0; }
-      .hero-btns { justify-content: center; }
-      .hero-stats { justify-content: center; }
-      .about-inner { flex-direction: column; gap: 2rem; }
-      .about-image { flex: none; width: 100%; max-width: 280px; margin: 0 auto; }
-      .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
-    }
-  </style>
+  /* Chat mockup */
+  .chat-card{
+    background:var(--paper);
+    border-radius:20px;
+    box-shadow:0 24px 60px -16px rgba(27,42,74,0.22);
+    border:1px solid var(--rule-soft);
+    overflow:hidden;
+    max-width:380px;
+    margin:0 auto;
+    transform:rotate(1.2deg);
+  }
+  .chat-head{
+    background:var(--navy);
+    color:#fff;
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .chat-avatar{
+    width:38px; height:38px;
+    border-radius:50%;
+    background:var(--orange);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    color:#fff;
+    flex-shrink:0;
+  }
+  .chat-head .who-name{font-weight:700; font-size:0.95rem;}
+  .chat-head .who-sub{font-size:0.74rem; color:rgba(255,255,255,0.65);}
+  .chat-body{
+    background:#EFE7DA;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .bubble{
+    border-radius:12px;
+    padding:10px 13px;
+    font-size:0.86rem;
+    max-width:84%;
+    line-height:1.45;
+    box-shadow:0 1px 1px rgba(0,0,0,0.04);
+  }
+  .bubble.in{
+    background:#fff;
+    color:var(--ink);
+    align-self:flex-start;
+    border-top-left-radius:3px;
+  }
+  .bubble.out{
+    background:#DCF4D2;
+    color:#1c3a1c;
+    align-self:flex-end;
+    border-top-right-radius:3px;
+  }
+  .bubble .tick{font-size:0.7rem; color:#5b8c4a; margin-left:6px;}
+  .bubble.attach{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:600;
+  }
+  .bubble.attach .file-ico{
+    width:26px;height:26px;border-radius:6px;
+    background:var(--orange);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.68rem;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    flex-shrink:0;
+  }
+
+  /* ===== SECTION SHELL ===== */
+  section{padding:84px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:48px;
+  }
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{
+    font-size:clamp(1.7rem, 3vw, 2.3rem);
+    margin-bottom:14px;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:1.04rem;
+  }
+
+  /* ===== ABOUT / NOTEBOOK MARGIN ===== */
+  .about{
+    background:var(--paper);
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+  }
+  .notebook{
+    position:relative;
+    padding-left:32px;
+    border-left:2px solid var(--rule);
+  }
+  .notebook::before{
+    content:"";
+    position:absolute;
+    left:-2px; top:0;
+    width:2px; height:64px;
+    background:var(--orange);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:44px;
+  }
+  @media (min-width:860px){
+    .about-grid{grid-template-columns:1fr 1fr;}
+  }
+  .about-text p{
+    color:var(--ink-soft);
+    margin-bottom:16px;
+    font-size:1.02rem;
+  }
+  .about-text strong{color:var(--navy);}
+
+  .timeline{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .tl-item{
+    position:relative;
+    padding:0 0 26px 28px;
+    border-left:2px solid var(--rule);
+  }
+  .tl-item:last-child{border-left:2px solid transparent; padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-6px; top:2px;
+    width:10px; height:10px;
+    border-radius:50%;
+    background:var(--orange);
+    border:2px solid var(--paper);
+    box-shadow:0 0 0 2px var(--orange);
+  }
+  .tl-year{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700;
+    color:var(--orange-deep);
+    font-size:0.82rem;
+    letter-spacing:0.03em;
+    margin-bottom:4px;
+  }
+  .tl-title{font-weight:700; color:var(--navy); margin-bottom:2px; font-size:0.98rem;}
+  .tl-desc{color:var(--ink-soft); font-size:0.9rem;}
+
+  .map-strip{
+    margin-top:36px;
+    padding-top:28px;
+    border-top:1px solid var(--rule);
+  }
+  .map-strip .label{
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    font-weight:600;
+    margin-bottom:14px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .country-dots{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .country-chip{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:var(--cream);
+    border:1px solid var(--rule);
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:0.86rem;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .country-chip .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);}
+
+  /* ===== FEATURES ===== */
+  .features-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+  @media (min-width:700px){
+    .features-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:1000px){
+    .features-grid{grid-template-columns:repeat(3, 1fr);}
+  }
+  .feature-card{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:16px;
+    padding:30px 26px;
+    transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .feature-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 32px -12px rgba(27,42,74,0.16);
+    border-color:rgba(244,115,42,0.3);
+  }
+  .feature-ico{
+    width:46px; height:46px;
+    border-radius:12px;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:18px;
+  }
+  .feature-card h3{
+    font-size:1.12rem;
+    margin-bottom:8px;
+  }
+  .feature-card p{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+  }
+  .feature-card.spotlight{
+    background:var(--navy);
+    border-color:var(--navy);
+  }
+  .feature-card.spotlight .feature-ico{background:var(--orange);}
+  .feature-card.spotlight h3{color:#fff;}
+  .feature-card.spotlight p{color:rgba(255,255,255,0.72);}
+  .feature-card.spotlight:hover{border-color:var(--orange);}
+
+  /* ===== SUBJECTS ===== */
+  .subjects-wrap{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  @media (min-width:780px){
+    .subjects-wrap{grid-template-columns:1fr 1fr;}
+  }
+  .board-card{
+    background:var(--paper);
+    border-radius:18px;
+    border:1px solid var(--rule);
+    padding:32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .board-card::after{
+    content:"";
+    position:absolute;
+    top:0;left:0;
+    width:5px;height:100%;
+    background:var(--orange);
+  }
+  .board-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.74rem;
+    font-weight:700;
+    letter-spacing:0.05em;
+    color:var(--orange-deep);
+    text-transform:uppercase;
+    margin-bottom:10px;
+    display:block;
+  }
+  .board-card h3{font-size:1.3rem; margin-bottom:6px;}
+  .board-card .board-desc{color:var(--ink-soft); font-size:0.92rem; margin-bottom:20px;}
+  .pill-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill{
+    background:var(--cream);
+    border:1px solid var(--rule);
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:0.84rem;
+    font-weight:600;
+    color:var(--navy);
+  }
+
+  /* ===== REVIEWS ===== */
+  .reviews{background:var(--paper); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
+  .reviews-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  @media (min-width:720px){
+    .reviews-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (min-width:1040px){
+    .reviews-grid{grid-template-columns:repeat(3, 1fr);}
+  }
+  .review-card{
+    background:var(--cream);
+    border:1px solid var(--rule);
+    border-radius:16px;
+    padding:26px 24px;
+    display:flex;
+    flex-direction:column;
+  }
+  .stars{
+    color:var(--amber);
+    font-size:0.95rem;
+    margin-bottom:14px;
+    letter-spacing:2px;
+  }
+  .review-quote{
+    color:var(--ink);
+    font-size:0.96rem;
+    line-height:1.55;
+    margin-bottom:18px;
+    flex-grow:1;
+  }
+  .review-by{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding-top:14px;
+    border-top:1px solid var(--rule);
+  }
+  .review-avatar{
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--navy);
+    color:var(--orange);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:0.85rem;
+    flex-shrink:0;
+  }
+  .review-name{font-weight:700; font-size:0.88rem; color:var(--navy);}
+  .review-meta{font-size:0.76rem; color:var(--ink-soft);}
+
+  /* ===== HOW IT WORKS ===== */
+  .steps{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  @media (min-width:760px){
+    .steps{grid-template-columns:repeat(4, 1fr); gap:18px;}
+  }
+  .step{
+    position:relative;
+    padding:26px 22px 22px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-radius:14px;
+    margin-bottom:18px;
+  }
+  @media (min-width:760px){.step{margin-bottom:0;}}
+  .step-num{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:0.78rem;
+    color:#fff;
+    background:var(--orange);
+    width:28px;height:28px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .step h4{font-size:1rem; margin-bottom:6px;}
+  .step p{font-size:0.86rem; color:var(--ink-soft);}
+
+  /* ===== CTA / DEMO FORM ===== */
+  .cta-section{
+    background:var(--navy);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-section::before{
+    content:"";
+    position:absolute;
+    bottom:-200px; left:-100px;
+    width:420px; height:420px;
+    background:radial-gradient(circle, rgba(244,115,42,0.22), transparent 70%);
+  }
+  .cta-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:40px;
+    position:relative;
+    z-index:1;
+  }
+  @media (min-width:880px){
+    .cta-grid{grid-template-columns:1fr 1fr; align-items:start;}
+  }
+  .cta-left h2{color:#fff; font-size:clamp(1.8rem, 3.4vw, 2.4rem); margin-bottom:16px;}
+  .cta-left p{color:rgba(255,255,255,0.75); font-size:1.05rem; margin-bottom:28px; max-width:480px;}
+  .cta-points{display:flex; flex-direction:column; gap:14px;}
+  .cta-point{display:flex; align-items:flex-start; gap:12px; font-size:0.95rem; color:rgba(255,255,255,0.88);}
+  .cta-point svg{flex-shrink:0; margin-top:2px;}
+
+  .form-card{
+    background:#fff;
+    border-radius:18px;
+    padding:32px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.4);
+  }
+  .form-card h3{font-size:1.3rem; margin-bottom:6px;}
+  .form-card .form-sub{color:var(--ink-soft); font-size:0.9rem; margin-bottom:24px;}
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;
+    font-size:0.85rem;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .field input, .field select{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid var(--rule);
+    border-radius:10px;
+    font-size:0.95rem;
+    font-family:'Plus Jakarta Sans', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    transition:border-color 0.15s ease;
+  }
+  .field input:focus, .field select:focus{
+    outline:none;
+    border-color:var(--orange);
+  }
+  .form-card .btn{width:100%; justify-content:center; margin-top:6px;}
+  .form-note{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    text-align:center;
+    margin-top:14px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--navy-deep);
+    color:rgba(255,255,255,0.6);
+    padding:48px 0 28px;
+  }
+  .footer-top{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:24px;
+    margin-bottom:32px;
+    padding-bottom:32px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-brand{
+    display:flex;align-items:center;gap:10px;
+    color:#fff;
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:1.15rem;
+  }
+  .footer-brand .brand-mark{background:var(--orange); color:var(--navy);}
+  .footer-tagline{font-size:0.86rem; margin-top:8px; max-width:280px; color:rgba(255,255,255,0.5);}
+  .footer-links{display:flex; gap:36px; flex-wrap:wrap;}
+  .footer-col h5{
+    color:#fff;
+    font-size:0.82rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:12px;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:600;
+  }
+  .footer-col a, .footer-col p{
+    display:block;
+    font-size:0.88rem;
+    color:rgba(255,255,255,0.6);
+    margin-bottom:8px;
+  }
+  .footer-col a:hover{color:var(--orange);}
+  .footer-bottom{
+    font-size:0.8rem;
+    text-align:center;
+    color:rgba(255,255,255,0.4);
+  }
+
+  /* ===== FLOATING WHATSAPP ===== */
+  .wa-float{
+    position:fixed;
+    bottom:22px;
+    right:22px;
+    z-index:999;
+    background:#25D366;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 24px rgba(37,211,102,0.45);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    animation:wa-pulse 2.4s ease-in-out infinite;
+  }
+  .wa-float:hover{
+    transform:scale(1.08);
+    box-shadow:0 10px 30px rgba(37,211,102,0.6);
+  }
+  @keyframes wa-pulse{
+    0%, 100% {box-shadow:0 8px 24px rgba(37,211,102,0.45);}
+    50% {box-shadow:0 8px 24px rgba(37,211,102,0.45), 0 0 0 10px rgba(37,211,102,0.12);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .wa-float{animation:none;}
+  }
+
+  /* Reveal-on-scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.in-view{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  /* Mobile nav */
+  .menu-toggle{
+    display:flex;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+  }
+  @media (min-width:760px){.menu-toggle{display:none;}}
+  .nav-links{display:none;}
+  @media (min-width:760px){.nav-links{display:flex;}}
+
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:var(--paper);
+    border-bottom:1px solid var(--rule);
+    padding:8px 24px 20px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{
+    padding:12px 0;
+    font-weight:600;
+    color:var(--navy);
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .mobile-menu .btn{margin-top:14px;}
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">Acadika<span>.</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#subjects">Subjects</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#contact" class="nav-cta">Book a Free Class</a></li>
-    </ul>
-    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
-      <span></span><span></span><span></span>
+<header>
+  <nav class="nav">
+    <div class="brand">
+      <span class="brand-mark">AC</span>
+      Acadika Classes
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#how">How it works</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <a href="#demo" class="btn nav-cta btn-sm">Book a Free Demo</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B2A4A" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#how">How it works</a>
+    <a href="#demo" class="btn">Book a Free Demo</a>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">🌍 Students from India, UK, USA, Netherlands & more</div>
-      <h1>Learn Smarter,<br/>Score <em>Better.</em></h1>
-      <p>Expert one-on-one and group tutoring for Maths & Science — Class 4 to 10. Build strong concepts, not just exam answers.</p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn-primary">Book a Free Class →</a>
-        <a href="#subjects" class="btn-secondary">View Subjects</a>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Teaching since April 2017</span>
+      <h1>Maths & Science, taught by <em>one teacher</em> who stays with your child from Class 4 to 10.</h1>
+      <p class="hero-sub">Personal, small-batch online tuition for CBSE, ICSE, KS3 and GCSE students — run entirely over WhatsApp. No apps to install, no portals to log into. Just a class link, a notebook, and a teacher who remembers where your child left off.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Vipin%2C%20I%27d%20like%20to%20know%20more%20about%20a%20free%20demo%20class" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.94.57 3.74 1.55 5.27L2 22l4.97-1.6a9.8 9.8 0 0 0 5.07 1.4h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7-1.87-1.87-4.35-2.9-7.02-2.9zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12 1 1.02-3.04-.2-.31a8.23 8.23 0 0 1-1.27-4.38c0-4.55 3.7-8.25 8.26-8.25 2.21 0 4.28.86 5.84 2.42a8.18 8.18 0 0 1 2.42 5.84c0 4.56-3.71 8.27-8.26 8.27zm4.52-6.19c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.15.16-.29.18-.54.06-1.48-.74-2.45-1.32-3.43-3-.26-.44.26-.41.74-1.36.08-.16.04-.3-.03-.43-.08-.12-.7-1.68-.96-2.3-.25-.6-.51-.52-.7-.53-.18-.01-.39-.01-.6-.01-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63 0 1.55 1.12 3.05 1.28 3.26.16.21 2.18 3.34 5.29 4.55 2.62 1.02 2.62.68 3.09.64.47-.04 1.51-.62 1.72-1.21.21-.6.21-1.11.15-1.21-.06-.1-.24-.16-.49-.28z"/></svg>
+          Message on WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#demo">Book a Free Demo Class</a>
       </div>
       <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">100+</div>
-          <div class="stat-label">Students Taught</div>
+        <div class="stat">
+          <div class="num">9<span>+</span></div>
+          <div class="label">Years teaching</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num">9+</div>
-          <div class="stat-label">Years Experience</div>
+        <div class="stat">
+          <div class="num">50<span>+</span></div>
+          <div class="label">Students taught</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num">95%</div>
-          <div class="stat-label">Score Improvement</div>
+        <div class="stat">
+          <div class="num">4</div>
+          <div class="label">Countries reached</div>
+        </div>
+        <div class="stat">
+          <div class="num mono">4–5</div>
+          <div class="label">Max batch size</div>
         </div>
       </div>
     </div>
-    <div class="hero-image">
-      <!-- REPLACE: Add your photo below. Remove the placeholder div and add: <img src="your-photo.jpg" alt="Your Name"> -->
-      <div class="hero-image-placeholder">
-        <div class="placeholder-icon">🖼️</div>
-        <p><strong>Add your photo here</strong><br/>Replace this box with your image</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- SUBJECTS -->
-  <section class="section" id="subjects">
-    <div class="section-header">
-      <div class="section-label">What We Teach</div>
-      <h2 class="section-title">Subjects We Cover</h2>
-      <p class="section-subtitle">Focused, in-depth tutoring for Maths and Science — from building basics to exam excellence.</p>
-    </div>
-    <div class="subjects-grid">
-      <div class="subject-card">
-        <div class="subject-icon">➕</div>
-        <h3>Mathematics</h3>
-        <p>From basic arithmetic to algebra, geometry, and mensuration — made simple and interesting with regular practice.</p>
-        <span class="subject-tag">Class 4–10</span>
+    <div class="reveal">
+      <div class="chat-card">
+        <div class="chat-head">
+          <div class="chat-avatar">V</div>
+          <div>
+            <div class="who-name">Vipin Sir</div>
+            <div class="who-sub">Acadika Classes</div>
+          </div>
+        </div>
+        <div class="chat-body">
+          <div class="bubble in">Hi! Reminder — Maths class today at 5 PM. Here's the link:<br>meet.google.com/abc-defg-hij</div>
+          <div class="bubble out">Got it, she'll join on time 🙏<span class="tick">✓✓</span></div>
+          <div class="bubble in">Great class today! Covered Quadratic Equations — sharing today's notes 👇</div>
+          <div class="bubble in attach">
+            <span class="file-ico">PDF</span>
+            Class_Notes_QuadraticEq.pdf
+          </div>
+          <div class="bubble out">Thank you sir! She understood the factorisation part finally 😊<span class="tick">✓✓</span></div>
+        </div>
       </div>
-      <div class="subject-card">
-        <div class="subject-icon">🔬</div>
-        <h3>Science</h3>
-        <p>Physics, Chemistry & Biology with concept-first teaching, diagrams, and real-world examples students actually remember.</p>
-        <span class="subject-tag">Class 4–10</span>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="section about" id="about">
-    <div class="about-inner">
-      <div class="about-image">
-        <!-- REPLACE: Add your photo below -->
-        <div class="placeholder-icon">🖼️</div>
-        <p><strong>Your Photo Here</strong><br/>Replace this with your image tag</p>
-      </div>
-      <div class="about-content">
-        <div class="section-label">About Me</div>
-        <h2 class="section-title">Hi, I'm Vipin Kumar</h2>
-        <p>I'm a dedicated Maths and Science tutor based in Bareilly with over 9 years of experience helping students from Class 4 to 10 build strong academic foundations.</p>
-        <p>My teaching approach is simple — clear concepts first, then practice. I work with students across CBSE and ICSE boards, and have also successfully tutored students from the UK, Netherlands, USA, and other countries online.</p>
-        <div class="about-highlights">
-          <div class="highlight">
-            <div class="highlight-num">100+</div>
-            <div class="highlight-text">Students Mentored</div>
-          </div>
-          <div class="highlight">
-            <div class="highlight-num">9+</div>
-            <div class="highlight-text">Years Teaching</div>
-          </div>
-          <div class="highlight">
-            <div class="highlight-num">4–10</div>
-            <div class="highlight-text">Classes Covered</div>
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="notebook">
+        <span class="eyebrow"><span class="dot"></span>About Vipin Kumar</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom:18px;">A teacher your child keeps for years, not for one term.</h2>
+        <div class="about-text">
+          <p>I started teaching in <strong>April 2017</strong>, and in that time I've taught <strong>50+ students</strong> — most of them not for a quick exam push, but for years at a stretch. A large number of my students join around Class 3 or 4 and stay with me right through to Class 10.</p>
+          <p>That long-term relationship is the whole point. I'm not learning a new child's gaps every few months — I already know where they struggle, how they think, and what explanation finally makes a concept click for <em>them</em> specifically.</p>
+          <p>My students have been based in <strong>India, the UK, the USA and the Netherlands</strong> — many of them children of the Indian diaspora juggling a UK or US school curriculum alongside staying connected to home. I teach Maths and Science across CBSE, ICSE, KS3 and GCSE.</p>
+        </div>
+        <div class="map-strip">
+          <div class="label">Students taught across</div>
+          <div class="country-dots">
+            <span class="country-chip"><span class="dot"></span>India</span>
+            <span class="country-chip"><span class="dot"></span>United Kingdom</span>
+            <span class="country-chip"><span class="dot"></span>United States</span>
+            <span class="country-chip"><span class="dot"></span>Netherlands</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section" id="how" style="background: var(--cream);">
-    <div class="section-header" style="text-align:center">
-      <div class="section-label">The Process</div>
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-subtitle" style="margin:0 auto">Getting started is simple. Just 4 easy steps.</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2017</div>
+          <div class="tl-title">Started Acadika Classes</div>
+          <div class="tl-desc">Began teaching Maths & Science one-on-one, building lesson plans from scratch for each student's board and pace.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2018–2021</div>
+          <div class="tl-title">Long-term batches take shape</div>
+          <div class="tl-desc">Students joining in Class 3–4 started staying on year after year — the multi-year model became the norm, not the exception.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2022–2024</div>
+          <div class="tl-title">Reach extends beyond India</div>
+          <div class="tl-desc">Started teaching UK, US and Netherlands-based students, adapting to KS3 and GCSE syllabuses alongside CBSE and ICSE.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">Today</div>
+          <div class="tl-title">50+ students, one classroom philosophy</div>
+          <div class="tl-desc">Small batches capped at 4–5 students, taught live with a digital whiteboard, every class followed up with notes on WhatsApp.</div>
+        </div>
+      </div>
     </div>
-    <div class="steps-grid">
-      <div class="step">
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>Why parents choose Acadika</span>
+      <h2>Built around how families actually want to be taught.</h2>
+      <p>No learning app to download, no dashboard to figure out. Just a teacher, a live class, and a WhatsApp thread that keeps everyone in sync.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card spotlight reveal">
+        <div class="feature-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M9 17v4"/><path d="M15 17v4"/><path d="M7 8h6M7 12h10"/></svg>
+        </div>
+        <h3>A real interactive whiteboard, every class</h3>
+        <p>I teach live using a digital whiteboard built specifically for the way I explain Maths and Science — not a static screen-share. Your child sees every step worked out in real time, the way they would on paper.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Everything happens on WhatsApp</h3>
+        <p>Class links, reminders, and notes — all sent directly to the parent's WhatsApp. No new app to learn, no separate login for your child to manage.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Small batches, 4–5 students max</h3>
+        <p>Small enough that I notice when a concept hasn't landed, and can slow down for the one student who needs it — without holding the rest of the class back.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <h3>Notes after every single class</h3>
+        <p>A PDF of what was taught lands on WhatsApp right after the session — so parents always know exactly what their child covered, and revision is never a scramble.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2v10l7 4"/></svg>
+        </div>
+        <h3>Built for multi-year continuity</h3>
+        <p>Most students stay with me from Class 3–4 right through to Class 10. I track each child's growth year on year, not just topic by topic.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Comfortable across boards</h3>
+        <p>CBSE, ICSE, KS3 and GCSE — I adapt the explanation style and pacing to whichever syllabus your child is actually being examined on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBJECTS ============ -->
+<section id="subjects" style="background:var(--paper); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>What I teach</span>
+      <h2>Maths & Science, mapped to your child's exact board.</h2>
+      <p>Whether your child sits CBSE/ICSE exams in India or KS3/GCSE in the UK, the curriculum and pace are tailored to what they'll actually be tested on.</p>
+    </div>
+
+    <div class="subjects-wrap">
+      <div class="board-card reveal">
+        <span class="board-tag">India · Class 4–10</span>
+        <h3>CBSE & ICSE</h3>
+        <p class="board-desc">Maths and Science aligned to the NCERT/CBSE and ICSE syllabus, with concept-first teaching rather than rote learning — built to hold up at exam time.</p>
+        <div class="pill-row">
+          <span class="pill">Class 4–5 Foundation</span>
+          <span class="pill">Class 6–8 Middle School</span>
+          <span class="pill">Class 9–10 Board Prep</span>
+        </div>
+      </div>
+
+      <div class="board-card reveal">
+        <span class="board-tag">United Kingdom</span>
+        <h3>KS3 & GCSE</h3>
+        <p class="board-desc">Maths and Science for KS3 students and GCSE candidates, taught with the same one-on-one attention regardless of timezone — many of my UK students are children of Indian families abroad.</p>
+        <div class="pill-row">
+          <span class="pill">Key Stage 3</span>
+          <span class="pill">GCSE Maths</span>
+          <span class="pill">GCSE Science</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>How it works</span>
+      <h2>From a WhatsApp message to your first class.</h2>
+      <p>The whole process is designed to have zero friction — for you and for your child.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
         <div class="step-num">1</div>
-        <h3>Book a Free Class</h3>
-        <p>Fill the form below or WhatsApp us to schedule your first free demo session.</p>
+        <h4>Message on WhatsApp</h4>
+        <p>Tell me your child's class, board, and what they're struggling with. Takes two minutes.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">2</div>
-        <h3>Assessment</h3>
-        <p>We understand the student's current level and identify the gaps to work on.</p>
+        <h4>Free demo class</h4>
+        <p>I send a Meet link directly on WhatsApp. You sit in, see how I teach, and decide if it's a fit.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">3</div>
-        <h3>Personalised Plan</h3>
-        <p>A custom study plan is created based on the student's board, class, and goals.</p>
+        <h4>Regular classes begin</h4>
+        <p>Classes run on a fixed schedule in a small batch of 4–5 students, using the live whiteboard.</p>
       </div>
-      <div class="step">
+      <div class="step reveal">
         <div class="step-num">4</div>
-        <h3>Learn & Improve</h3>
-        <p>Regular classes, weekly tests, and progress updates keep everything on track.</p>
+        <h4>Notes after every class</h4>
+        <p>A PDF of what was covered lands on WhatsApp right after — so nothing gets lost between sessions.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TESTIMONIALS -->
-  <section class="section testimonials" id="testimonials">
-    <div class="section-label">What Parents Say</div>
-    <h2 class="section-title">Real Results, Real Stories</h2>
-    <p class="section-subtitle">Don't just take our word for it — hear from the parents themselves.</p>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>What parents say</span>
+      <h2>Real feedback, from real parents.</h2>
+      <p>These are unedited messages sent by parents of students I've taught — some recent, some after years of working together.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
         <div class="stars">★★★★★</div>
-        <p>"My daughter used to hate Maths and avoid it completely — today she calls it her favourite subject. A big thanks to Vipin sir for teaching the new UK curriculum so well and helping her sail through a tough transition."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">S</div>
+        <p class="review-quote">"My daughter used to hate Maths and avoid it completely — today she calls it her favourite subject. Vipin sir has been excellent in teaching the new curriculum since she goes to school in the UK. It was a tough phase for her, but he helped her sail through smoothly."</p>
+        <div class="review-by">
+          <div class="review-avatar">S</div>
           <div>
-            <div class="author-name">Sakshi</div>
-            <div class="author-detail">Parent · KS3, United Kingdom</div>
+            <div class="review-name">Sakshi</div>
+            <div class="review-meta">Parent · UK</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
+
+      <div class="review-card reveal">
         <div class="stars">★★★★★</div>
-        <p>"Mr. Vipin has been teaching my son since last year. He educates students with creativity and patience, and is always on time, courteous, and passionate. Thank you for teaching my son."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">B</div>
+        <p class="review-quote">"Mr. Vipin has been teaching my son since last year. He educates students with creativity and patience, and is always on time, courteous, and passionate. Thank you for teaching my son."</p>
+        <div class="review-by">
+          <div class="review-avatar">S</div>
           <div>
-            <div class="author-name">B. C. Saravanan</div>
-            <div class="author-detail">Parent · Mathematics</div>
+            <div class="review-name">B. C. Saravanan</div>
+            <div class="review-meta">Parent</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
+
+      <div class="review-card reveal">
         <div class="stars">★★★★★</div>
-        <p>"Vipin sir is very good at teaching — innovative, patient, punctual, and enthusiastic. I recommend his teaching to all students from Class 3/4 to Class 10."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">K</div>
+        <p class="review-quote">"Vipin sir is very good at teaching — innovative and patient. He's very punctual, polite, and enthusiastic. I recommend his teaching to anyone needing help from Class 3/4 to 10."</p>
+        <div class="review-by">
+          <div class="review-avatar">R</div>
           <div>
-            <div class="author-name">Dr. K. K. Rajak</div>
-            <div class="author-detail">Parent · Classes 4–10</div>
+            <div class="review-name">Dr. K. K. Rajak</div>
+            <div class="review-meta">Parent</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
+
+      <div class="review-card reveal">
         <div class="stars">★★★★★</div>
-        <p>"Mr. Vipin has taught my daughters and son (Class 6–10) for 4 years, and their basic concepts became crystal clear. My son is now doing MBBS at a top government college. A hardworking, emotional, real GURU."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">Z</div>
+        <p class="review-quote">"Vipin has taught my daughters for 4 years and I'm very happy with their progress. He also taught my son from 6th to 10th — his concepts became clear, and he's now doing MBBS at Lokmanya Tilak Sion Medical College. I found Vipin a hard-working, emotional, and a real guru."</p>
+        <div class="review-by">
+          <div class="review-avatar">Z</div>
           <div>
-            <div class="author-name">Dr. Zunjar Dubal</div>
-            <div class="author-detail">Parent · CBSE Classes 6–10</div>
+            <div class="review-name">Dr. Zunjar Dubal</div>
+            <div class="review-meta">Parent</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
+
+      <div class="review-card reveal">
         <div class="stars">★★★★★</div>
-        <p>"Excellent teacher and mentor, making a lasting impact on the kids. His teaching techniques and methodology are outstanding, and Agrim genuinely enjoys being mentored by him."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">A</div>
+        <p class="review-quote">"Over the past year, Vipin played a crucial role in transforming our daughter's attitude to Maths — from anxiety to genuine enjoyment. His patience is remarkable; he always makes sure she truly understands before moving on. She now approaches Maths without fear."</p>
+        <div class="review-by">
+          <div class="review-avatar">S</div>
           <div>
-            <div class="author-name">Dr. Abhishek</div>
-            <div class="author-detail">Parent · Maths &amp; Science</div>
+            <div class="review-name">Sudipta Singh</div>
+            <div class="review-meta">Parent</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
+
+      <div class="review-card reveal">
         <div class="stars">★★★★★</div>
-        <p>"We've been fortunate to find such a caring Maths teacher. Over the past year, he's turned our daughter's anxiety into genuine enjoyment — patient, approachable, and always making sure she truly understands."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">S</div>
+        <p class="review-quote">"Happy Teacher's Day to a truly wonderful teacher! You not only inspire our child to study sincerely, but also guide him to grow into a noble human being. You are a blessing not only for our kid but also for us as parents."</p>
+        <div class="review-by">
+          <div class="review-avatar">K</div>
           <div>
-            <div class="author-name">Sudipta Singh</div>
-            <div class="author-detail">Parent · Mathematics, Online</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p>"You don't just inspire our child to study sincerely, but guide him to grow into a noble human being. A blessing for our kid and for us as parents — thank you for always going above and beyond."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">K</div>
-          <div>
-            <div class="author-name">Kartik &amp; Priyanka Sachdeva</div>
-            <div class="author-detail">Parents · Maths &amp; Science</div>
+            <div class="review-name">Kartik & Priyanka Sachdeva</div>
+            <div class="review-meta">Parents</div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="contact-inner">
-      <div class="contact-info">
-        <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Book Your Free Class Today</h2>
-        <p>The first class is completely free — no commitment needed. Fill the form and I'll reach out within 24 hours to schedule your session.</p>
-        <div class="contact-detail">
-          <span class="icon">📧</span>
-          <span><a href="mailto:acadikaclasses@gmail.com">acadikaclasses@gmail.com</a></span>
+<!-- ============ DEMO FORM / CTA ============ -->
+<section class="cta-section" id="demo">
+  <div class="wrap cta-grid">
+    <div class="cta-left">
+      <span class="eyebrow" style="background:rgba(244,115,42,0.18); color:#FFB88A;"><span class="dot"></span>Book a free demo</span>
+      <h2>See how a class actually feels, before you commit.</h2>
+      <p>Send your child's details below or message directly on WhatsApp — I'll personally reply to set up a free demo class at a time that works for you.</p>
+      <div class="cta-points">
+        <div class="cta-point">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F4732A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          No cost, no obligation to continue
         </div>
-        <div class="contact-detail">
-          <span class="icon">📍</span>
-          <span>Bareilly, Uttar Pradesh</span>
+        <div class="cta-point">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F4732A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Scheduled at a time that suits your timezone
         </div>
-        <div class="contact-detail">
-          <span class="icon">💬</span>
-          <!-- ✏️ EDIT: Replace 910000000000 with your WhatsApp number -->
-          <span><a href="https://wa.me/910000000000" target="_blank">Chat on WhatsApp</a></span>
+        <div class="cta-point">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F4732A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Taught by me directly — never handed off to another tutor
         </div>
       </div>
-      <div class="contact-form">
-        <h3 style="font-family:'Sora',sans-serif; margin-bottom:1.5rem; font-size:1.3rem;">Book a Free Class</h3>
-        <!-- ✏️ CONNECT: Replace action="#" with your form service URL (e.g. Formspree or Google Forms embed) -->
-        <div class="form-group">
-          <label>Student's Full Name</label>
-          <input type="text" placeholder="e.g. Rahul Sharma"/>
+    </div>
+
+    <div class="form-card reveal">
+      <h3>Request a free demo class</h3>
+      <p class="form-sub">Fill this in and I'll message you on WhatsApp to confirm a slot.</p>
+      <form id="demoForm" onsubmit="return handleDemoSubmit(event)">
+        <div class="field">
+          <label for="parentName">Parent's name</label>
+          <input type="text" id="parentName" name="parentName" placeholder="e.g. Anjali Mehta" required>
         </div>
-        <div class="form-group">
-          <label>Parent's Phone Number</label>
-          <input type="tel" placeholder="+91 00000 00000"/>
+        <div class="field">
+          <label for="whatsappNum">WhatsApp number (with country code)</label>
+          <input type="tel" id="whatsappNum" name="whatsappNum" placeholder="e.g. +44 7XXX XXXXXX" required>
         </div>
-        <div class="form-group">
-          <label>Class / Grade</label>
-          <select>
-            <option value="">Select Class</option>
-            <option>Class 4</option><option>Class 5</option><option>Class 6</option>
-            <option>Class 7</option><option>Class 8</option>
-            <option>Class 9</option><option>Class 10</option>
+        <div class="field">
+          <label for="studentClass">Child's class</label>
+          <select id="studentClass" name="studentClass" required>
+            <option value="" disabled selected>Select class</option>
+            <option>Class 4</option>
+            <option>Class 5</option>
+            <option>Class 6</option>
+            <option>Class 7 / KS3</option>
+            <option>Class 8</option>
+            <option>Class 9 / GCSE</option>
+            <option>Class 10 / GCSE</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Subject Needed</label>
-          <select>
-            <option value="">Select Subject</option>
-            <option>Mathematics</option><option>Science</option><option>Both Maths & Science</option>
+        <div class="field">
+          <label for="board">Board / Curriculum</label>
+          <select id="board" name="board" required>
+            <option value="" disabled selected>Select board</option>
+            <option>CBSE</option>
+            <option>ICSE</option>
+            <option>KS3 (UK)</option>
+            <option>GCSE (UK)</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Anything else you'd like us to know?</label>
-          <textarea placeholder="e.g. Struggling with algebra, exams in 2 months..."></textarea>
+        <button type="submit" class="btn">Send Request on WhatsApp</button>
+      </form>
+      <p class="form-note">This opens WhatsApp with your details pre-filled — nothing is stored or sent anywhere else.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark">AC</span>
+          Acadika Classes
         </div>
-        <button class="form-submit" onclick="alert('Thank you! We will contact you within 24 hours. 🙏')">Send Request →</button>
+        <p class="footer-tagline">Personal Maths & Science tuition for Class 4–10 and KS3/GCSE, taught by Vipin Kumar since 2017.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="#about">About</a>
+          <a href="#subjects">Subjects</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#how">How it works</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get in touch</h5>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+          <p>Bareilly, Uttar Pradesh, India</p>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="footer-bottom">
+      © <span id="year"></span> Acadika Classes. Taught personally by Vipin Kumar.
+    </div>
+  </div>
+</footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">Acadika<span>.</span></div>
-    <p>© 2026 Acadika Classes. All rights reserved.</p>
-  </footer>
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/91XXXXXXXXXX?text=Hi%20Vipin%2C%20I%27d%20like%20to%20know%20more%20about%20classes" target="_blank" rel="noopener" aria-label="Message on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.94.57 3.74 1.55 5.27L2 22l4.97-1.6a9.8 9.8 0 0 0 5.07 1.4h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7-1.87-1.87-4.35-2.9-7.02-2.9zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12 1 1.02-3.04-.2-.31a8.23 8.23 0 0 1-1.27-4.38c0-4.55 3.7-8.25 8.26-8.25 2.21 0 4.28.86 5.84 2.42a8.18 8.18 0 0 1 2.42 5.84c0 4.56-3.71 8.27-8.26 8.27zm4.52-6.19c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.15.16-.29.18-.54.06-1.48-.74-2.45-1.32-3.43-3-.26-.44.26-.41.74-1.36.08-.16.04-.3-.03-.43-.08-.12-.7-1.68-.96-2.3-.25-.6-.51-.52-.7-.53-.18-.01-.39-.01-.6-.01-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63 0 1.55 1.12 3.05 1.28 3.26.16.21 2.18 3.34 5.29 4.55 2.62 1.02 2.62.68 3.09.64.47-.04 1.51-.62 1.72-1.21.21-.6.21-1.11.15-1.21-.06-.1-.24-.16-.49-.28z"/></svg>
+</a>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+
+  // Demo form -> WhatsApp deep link
+  function handleDemoSubmit(e){
+    e.preventDefault();
+    const parentName = document.getElementById('parentName').value.trim();
+    const whatsappNum = document.getElementById('whatsappNum').value.trim();
+    const studentClass = document.getElementById('studentClass').value;
+    const board = document.getElementById('board').value;
+
+    const message = `Hi Vipin, I'd like to book a free demo class.%0A%0AParent name: ${encodeURIComponent(parentName)}%0AContact number: ${encodeURIComponent(whatsappNum)}%0AChild's class: ${encodeURIComponent(studentClass)}%0ABoard: ${encodeURIComponent(board)}`;
+
+    window.open(`https://wa.me/91XXXXXXXXXX?text=${message}`, '_blank');
+    return false;
+  }
+</script>
 
 </body>
 </html>
